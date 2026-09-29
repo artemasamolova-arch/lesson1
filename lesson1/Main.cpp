@@ -8,23 +8,47 @@ int main()
 	SetConsoleOutputCP(CP_UTF8);
 	srand(time(NULL));
 	
-	//первые - строки,вторые - столбики
-	
 	const int row = 3, col = 4;
-	
+
 	int arr[row][col];
-	
+	int sum1 = 0;
+
 
 	for (int i = 0; i < row; i++)
 	{
+		std::cout << "\t";
+		int sum = 0;
 		for (int j = 0; j < col; j++)
 		{
-			arr[i][j] = rand() % 10 + 1;
-			std::cout << arr[i][j] << " ";
+			arr[i][j] = rand() % 10;
+			std::cout << arr[i][j] << "  ";
+			sum += arr[i][j];
 		}
-		std::cout << "\n";
+		std::cout << "|" << sum << "\n";
+
 	}
-	//
+	std::cout << "\t---------------\n\t";
+	
+
+	for (int j = 0; j < col; j++)
+	{
+		int sum = 0;
+		
+		for (int i = 0; i < row; i++)
+		{
+			sum += arr[i][j];
+			
+		}
+		sum1 += sum;
+		
+		std::cout << sum << " ";
+		if (j == 3)
+		{
+			std::cout << " |" << sum1;
+		}
+	}
+	
+	
 
 
 	return 0;
@@ -441,3 +465,48 @@ int main()
 		std::cout << a[i] << " ";
 	}*/
 
+/*const int row = 3, col = 4;
+	
+	int arr[row][col];
+	
+
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			arr[i][j] = rand() % 10 + 1;
+			std::cout << arr[i][j] << " ";
+		}
+		std::cout << "\n";
+	}*/
+
+/*const int size = 10;
+
+	int arr[size];
+	int j = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 6;
+		std::cout << arr[i] << " ";
+	}
+	std::cout << "\n\n\n";
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] != 0)
+		{
+			arr[j] = arr[i];
+			j++;
+		}
+	}
+	while (j < size)
+	{
+		arr[j] = -1;
+		j++;
+	}
+	
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+*/
